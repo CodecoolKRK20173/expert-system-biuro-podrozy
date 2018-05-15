@@ -1,4 +1,4 @@
-package main.java.com.codecool.java.expertsystem;
+package com.codecool.java.expertsystem;
 
 import java.util.HashMap;
 import java.util.Map;
