@@ -8,7 +8,7 @@ import java.util.List;
 public class MultipleValue extends Value {
 
     private List<String> params;
-    private boolean selectionType;
+    //private boolean selectionType;
 
     public MultipleValue(List<String> params, boolean selectionType) {
         
@@ -21,8 +21,16 @@ public class MultipleValue extends Value {
         return params;
     }
 
-    public boolean getSelectionType() {
+    // public boolean getSelectionType() {
 
-        return this.selectionType;
+    //     return this.selectionType;
+    // }
+
+    public String getParam (){
+        String paramsToString = "";
+        for (int i = 0; i<params.size(); i++) {
+            paramsToString += params.get(i) + " ";
+        }
+        return paramsToString;
     }
 }
