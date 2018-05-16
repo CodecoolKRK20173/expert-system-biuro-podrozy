@@ -1,5 +1,6 @@
 package com.codecool.java.expertsystem;
 
+import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
@@ -8,37 +9,72 @@ public class RuleParser extends XMLParser {
 
     private RuleRepository ruleRepository;
 
-    public RuleParser (){
+    public RuleParser() {
+
+        this.ruleRepository = new RuleRepository();
+
+
         loadXmlDocument("src/main/resources/Rules.xml");
+
         System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
-        NodeList nList = doc.getElementsByTagName("Rule");
+
+        parseRules(doc);
+
+
+    }
+
+    private void parseRules(Document document) {
+
+        NodeList nList = document.getElementsByTagName("Rule");
+        
         for (int i = 0; i < nList.getLength(); i++) {
-            Node nNode = nList.item(i);
-            //System.out.println("\nCurrent Element :" + nNode.getNodeName());
-            if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 
-                Element eElement = (Element) nNode;
-                
-                String id = eElement.getAttribute("id");
-                System.out.println("Staff id : " + id);
-                System.out.println("First Name : " + eElement.getElementsByTagName("Question").item(0).getTextContent());
-                Element eAnswer = (Element) eElement.getElementsByTagName("Answer").item(0);
-                eAnswer.getElementsByTagName("Selection").item(0);
-                eAnswer.getElementsByTagName("Selection").item(1);
-
-
-                Answer answer = new Answer();
-                Question question = new Question(id, eElement.getElementsByTagName("Question").item(0).getTextContent(), answer);
-
+            if (nList.item(i).getNodeName().equals("Rule")) {
+                parseOneRule((Element) nList.item(i));
             }
         }
     }
 
-    // public RuleParser(RuleRepository ruleRepository) {
+    private void parseOneRule(Element rule) {
 
-    //     this.ruleRepository = ruleRepository;
-    // }
+        String id = rule.getAttribute("id");
+            System.out.println("Id : " + id);
 
+        Element question = (Element) rule.getElementsByTagName("Question").item(0);
+        String questionDesc = question.getTextContent();
+            System.out.println("Question : " + questionDesc);
+            
+        Element answer = (Element) rule.getElementsByTagName("Answer").item(0);
+        NodeList selections = answer.getElementsByTagName("Selection");
+
+        for(int i = 0; i < selections.getLength(); i++) {
+            if (selections.item(i).getNodeName().equals("Selection")) {
+                parseOneSelection((Element) selections.item(i));
+            }
+        }
+    }
+
+    private void parseOneSelection(Element selection) {
+
+        String booleanValue = selection.getAttribute("value");
+            System.out.println("Selection value : " + booleanValue);
+        
+        NodeList list = selection.getChildNodes();
+        Node value ;
+        for(int i = 0; i < list.getLength(); i++) {
+            if (list.item(i).getNodeName().equals("SingleValue")) {
+                value = list.item(i).getAttributes().getNamedItem("value");
+                System.out.printf("%s value: %s %n%n", list.item(i).getNodeName(), value);  
+                
+            }
+            if (list.item(i).getNodeName().equals("MultipleValue")) {
+                value = list.item(i).getAttributes().getNamedItem("value");
+                System.out.printf("%s value: %s %n%n", list.item(i).getNodeName(), value);  
+            }
+                        
+        }
+    }
+        
     public RuleRepository getRuleRepository() {
 
         return this.ruleRepository;
