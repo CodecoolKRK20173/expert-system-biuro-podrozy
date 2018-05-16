@@ -12,16 +12,9 @@ public class RuleParser extends XMLParser {
     private RuleRepository ruleRepository;
 
     public RuleParser() {
-
         this.ruleRepository = new RuleRepository();
-
-
-        loadXmlDocument("src/main/resources/Rules.xml");
-        
-        
+        loadXmlDocument("src/main/resources/Rules.xml");  
         parseRules(doc);
-
-
     }
 
     private void parseRules(Document document) {
@@ -38,11 +31,10 @@ public class RuleParser extends XMLParser {
     private Question parseOneRule(Element rule) {
 
         String id = rule.getAttribute("id");
-        //System.out.println("Id : " + id);
-
+        
         Element questionElem = (Element) rule.getElementsByTagName("Question").item(0);
         String questionDesc = questionElem.getTextContent();
-            System.out.println("Question : " + questionDesc);
+            //System.out.println("Question : " + questionDesc);
             
         Element answerElem = (Element) rule.getElementsByTagName("Answer").item(0);
         NodeList selections = answerElem.getElementsByTagName("Selection");
@@ -63,7 +55,7 @@ public class RuleParser extends XMLParser {
         Answer answer = new Answer();
 
         Boolean booleanValue = Boolean.valueOf(selection.getAttribute("value"));
-            System.out.println("Selection value : " + booleanValue);
+            //System.out.println("Selection value : " + booleanValue);
         
         NodeList list = selection.getChildNodes();
         Node valueNode;
@@ -74,15 +66,15 @@ public class RuleParser extends XMLParser {
                 valueNode = list.item(i).getAttributes().getNamedItem("value");
                 value = valueNode.getNodeValue();
                 
-                System.out.printf("%s value: %s %n%n", list.item(i).getNodeName(), value); 
+                //System.out.printf("%s value: %s %n%n", list.item(i).getNodeName(), value); 
                 answer.addValue(new SingleValue(value, booleanValue)); 
                 
             }
             if (list.item(i).getNodeName().equals("MultipleValue")) {
                 valueNode = list.item(i).getAttributes().getNamedItem("value");
                 value = valueNode.getNodeValue();
-                values = Arrays.asList(value.split(","));
-                System.out.printf("%s value: %s %n%n", list.item(i).getNodeName(), value);  
+                values = Arrays.asList(value.split(", "));
+                //System.out.printf("%s value: %s %n%n", list.item(i).getNodeName(), value);  
                 answer.addValue(new MultipleValue(values, booleanValue));                 
             }         
         }
@@ -93,13 +85,4 @@ public class RuleParser extends XMLParser {
 
         return this.ruleRepository;
     }
-
-    // public void loadXmlDocument(String xmlPath) {
-
-    //     //to implement
-    // }
-
-
-
-
 }
