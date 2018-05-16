@@ -21,12 +21,12 @@ public class RuleParser extends XMLParser {
                 
                 String id = eElement.getAttribute("id");
                 System.out.println("Staff id : " + id);
-                System.out.println("First Name : " + eElement.getElementsByTagName("Question").item(0).getTextContent());
+                System.out.println("First Name : " + eElement.getElementsByTagName("Question").item(0).getTextContent());          
                 Element eAnswer = (Element) eElement.getElementsByTagName("Answer").item(0);
                 eAnswer.getElementsByTagName("Selection").item(0);
                 eAnswer.getElementsByTagName("Selection").item(1);
-
-
+               
+            
                 Answer answer = new Answer();
                 Question question = new Question(id, eElement.getElementsByTagName("Question").item(0).getTextContent(), answer);
 
