@@ -9,7 +9,7 @@ public class FactParser extends XMLParser {
     private FactRepository factRepository;
 
     public FactParser() {
-        loadXmlDocument("/Users/fbrzozowski/code/codecool/Module_2/TW5/expert-system-biuro-podrozy/Facts.xml");
+        loadXmlDocument("Facts.xml");
     }
 
     FactRepository getFactRepository() {
