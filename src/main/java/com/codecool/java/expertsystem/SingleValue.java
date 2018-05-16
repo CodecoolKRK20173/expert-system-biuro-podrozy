@@ -4,9 +4,9 @@ import java.util.Collections;
 import java.util.List;
 
 public class SingleValue extends Value {
-
+    
     private String param;
-    private boolean selectionType;
+    // private boolean selectionType;
 
     public SingleValue(String param, boolean selectionType) {
         
@@ -19,8 +19,12 @@ public class SingleValue extends Value {
         return Collections.singletonList(this.param);
     }
 
-    public boolean getSelectionType() {
 
-        return this.selectionType;
+    // public boolean getSelectionType() {
+    //     return this.selectionType;
+    // }
+
+    public String getParam (){
+        return param;
     }
 }
