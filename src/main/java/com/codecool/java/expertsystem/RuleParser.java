@@ -17,9 +17,8 @@ public class RuleParser extends XMLParser {
 
 
         loadXmlDocument("src/main/resources/Rules.xml");
-
-        System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
-
+        
+        
         parseRules(doc);
 
 
@@ -30,7 +29,6 @@ public class RuleParser extends XMLParser {
         NodeList nList = document.getElementsByTagName("Rule");
         
         for (int i = 0; i < nList.getLength(); i++) {
-
             if (nList.item(i).getNodeName().equals("Rule")) {
                 ruleRepository.addQuestion(parseOneRule((Element) nList.item(i)));
             }
@@ -40,7 +38,7 @@ public class RuleParser extends XMLParser {
     private Question parseOneRule(Element rule) {
 
         String id = rule.getAttribute("id");
-            System.out.println("Id : " + id);
+        //System.out.println("Id : " + id);
 
         Element questionElem = (Element) rule.getElementsByTagName("Question").item(0);
         String questionDesc = questionElem.getTextContent();
