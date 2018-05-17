@@ -28,9 +28,8 @@ public class Question {
         return this.answer;
     }
 
-    public boolean getEvalutedAnswer(String input) {
+    public boolean getEvalutedAnswer(String input) throws Exception {
 
-        //to implement
-        return false;
+        return answer.evaluateAswerByInput(input);
     }
 }
