@@ -1,8 +1,6 @@
 package com.codecool.java.expertsystem;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Fact {
 
@@ -19,6 +17,10 @@ public class Fact {
     public Set<String> getIdSet() {
 
         return this.fields.keySet();
+    }
+
+    public Map<String, Boolean> getFileds() {
+        return this.fields;
     }
 
     public void setFactValueById(String id, boolean value) {

@@ -1,9 +1,11 @@
 package com.codecool.java.expertsystem;
 
+
 import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
+import java.util.Iterator;
 
 public class ESProvider {
 
@@ -48,8 +50,15 @@ public class ESProvider {
     }
 
     public String evaluate() {
+        String metch = null;
+        Iterator<Fact> factIterator = factRepository.getIterator();
 
-        //to implement
-        return "";
+        while(factIterator.hasNext() ) {
+            Fact fact = factIterator.next();
+            if(fact.getFileds().equals(this.userAnswers)) {
+                metch = fact.getDescription();
+            }
+        }
+        return metch;
     }
 }
