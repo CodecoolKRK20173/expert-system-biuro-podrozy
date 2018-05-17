@@ -3,21 +3,29 @@ package com.codecool.java.expertsystem;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
-        //System.out.println("Test");
-        RuleParser myrules = new RuleParser();   
+
+        RuleParser myrules = new RuleParser(); 
+        Scanner input = new Scanner(System.in);
+        Question question;
+        String userInput;
+        boolean booleanAnswer;
+
         while (myrules.getRuleRepository().getIterator().hasNext()) {
             
-            String questionToPrint = myrules.getRuleRepository().getIterator().next().getQuestion();
-            getString(questionToPrint);
+            question = myrules.getRuleRepository().getIterator().next();
             
-        }
-          
+            System.out.println(question.getQuestion());
+            userInput = input.nextLine();
+            try {
+                booleanAnswer = question.getEvalutedAnswer(userInput);
+                System.out.println(booleanAnswer);
+                
+            } catch (Exception e) {
+                System.out.println("Bad answer.");
+                
+            }    
+        }     
     }
-
-    public static String getString(String text) {
-        System.out.println(text);
-        Scanner input = new Scanner(System.in);
-        return input.nextLine();
-    } 
 }
