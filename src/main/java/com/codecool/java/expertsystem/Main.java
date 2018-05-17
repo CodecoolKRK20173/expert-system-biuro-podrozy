@@ -6,6 +6,13 @@ public class Main {
 
     public static void main(String[] args) {
 
+        FactParser factParser = new FactParser();
+        RuleParser ruleParser = new RuleParser();
+
+        ESProvider esProvider = new ESProvider(factParser, ruleParser);
+        esProvider.collectAnswers();
+
+        //fot tests
         RuleParser myrules = new RuleParser(); 
         Scanner input = new Scanner(System.in);
         Question question;
