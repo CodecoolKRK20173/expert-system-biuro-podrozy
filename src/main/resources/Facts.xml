@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Facts>
     <Fact id="mazury">
-        <Description value="Giżycko"/>
+        <Description value="Based on your preferences we suggest you a trip to: Giżycko"/>
         <Evals>
             <Eval id="plane">false</Eval>
             <Eval id="activity">true</Eval>
@@ -10,8 +10,18 @@
             <Eval id="condition">false</Eval>
         </Evals>
     </Fact>
+    <Fact id="mazury2">
+        <Description value="Based on your preferences we suggest you a trip to: Jezioro Probarskie"/>
+        <Evals>
+            <Eval id="plane">false</Eval>
+            <Eval id="activity">true</Eval>
+            <Eval id="monuments">false</Eval>
+            <Eval id="water">true</Eval>
+            <Eval id="condition">true</Eval>
+        </Evals>
+    </Fact>
     <Fact id="baltyk">
-        <Description value="Władysławowo"/>
+        <Description value="Based on your preferences we suggest you a trip to: Władysławowo"/>
         <Evals>
             <Eval id="plane">false</Eval>
             <Eval id="activity">false</Eval>
@@ -21,7 +31,7 @@
         </Evals>
     </Fact>
     <Fact id="mountains">
-        <Description value="Bieszczady"/>
+        <Description value="Based on your preferences we suggest you a trip to: Bieszczady"/>
         <Evals>
             <Eval id="plane">false</Eval>
             <Eval id="activity">true</Eval>
@@ -31,7 +41,7 @@
         </Evals>
     </Fact>
     <Fact id="forests">
-        <Description value="Bory Tucholskie"/>
+        <Description value="Based on your preferences we suggest you a trip to: Bory Tucholskie"/>
         <Evals>
             <Eval id="plane">false</Eval>
             <Eval id="activity">true</Eval>
@@ -41,7 +51,7 @@
         </Evals>
     </Fact>
     <Fact id="exotic">
-        <Description value="Majorka"/>
+        <Description value="Based on your preferences we suggest you a trip to: Majorka"/>
         <Evals>
             <Eval id="plane">true</Eval>
             <Eval id="activity">false</Eval>
@@ -51,9 +61,9 @@
         </Evals>
     </Fact>
     <Fact id="exotic_active">
-        <Description value="Choracja"/>
+        <Description value="Based on your preferences we suggest you a trip to: Chorwacja"/>
         <Evals>
-            <Eval id="plane">true</Eval>
+            <Eval id="plane">false</Eval>
             <Eval id="activity">true</Eval>
             <Eval id="monuments">true</Eval>
             <Eval id="water">true</Eval>
@@ -61,13 +71,53 @@
         </Evals>
     </Fact>
     <Fact id="exotic_active2">
-        <Description value="Peru"/>
+        <Description value="Based on your preferences we suggest you a trip to: Peru"/>
         <Evals>
-            <Eval id="plane">false</Eval>
+            <Eval id="plane">true</Eval>
             <Eval id="activity">true</Eval>
             <Eval id="monuments">true</Eval>
             <Eval id="water">false</Eval>
             <Eval id="condition">true</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="exotic_active3">
+        <Description value="Based on your preferences we suggest you a trip to: Maroko"/>
+        <Evals>
+            <Eval id="plane">true</Eval>
+            <Eval id="activity">true</Eval>
+            <Eval id="monuments">false</Eval>
+            <Eval id="water">true</Eval>
+            <Eval id="condition">true</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="exotic_active4">
+        <Description value="Based on your preferences we suggest you a trip to: Gruzja"/>
+        <Evals>
+            <Eval id="plane">true</Eval>
+            <Eval id="activity">true</Eval>
+            <Eval id="monuments">false</Eval>
+            <Eval id="water">false</Eval>
+            <Eval id="condition">false</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="exotic_fun">
+        <Description value="Based on your preferences we suggest you a trip to: Hiszpania"/>
+        <Evals>
+            <Eval id="plane">true</Eval>
+            <Eval id="activity">false</Eval>
+            <Eval id="monuments">false</Eval>
+            <Eval id="water">true</Eval>
+            <Eval id="condition">false</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="exotic_fun2">
+        <Description value="Based on your preferences we suggest you a trip to: Bułgaria"/>
+        <Evals>
+            <Eval id="plane">true</Eval>
+            <Eval id="activity">false</Eval>
+            <Eval id="monuments">false</Eval>
+            <Eval id="water">true</Eval>
+            <Eval id="condition">false</Eval>
         </Evals>
     </Fact>
 </Facts>
