@@ -15,7 +15,7 @@ public class Answer {
                 if (pattern.equals(input)) {
                     return value.getSelectionType();
                 }
-            } 
+            }
         }
         throw new InputMismatchException("We don't have this answer in our database.\nPlease try another one.");
     }

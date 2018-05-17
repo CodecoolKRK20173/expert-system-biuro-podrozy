@@ -9,16 +9,17 @@ public class FactParser extends XMLParser {
     private FactRepository factRepository;
 
     public FactParser() {
+
+        this.factRepository = new FactRepository();
         loadXmlDocument("src/main/resources/Facts.xml");
         parse();
     }
 
-    FactRepository getFactRepository() {
+    public FactRepository getFactRepository() {
         return this.factRepository;
     }
 
     public void parse() {
-        factRepository = new FactRepository();
         NodeList factList = doc.getElementsByTagName("Fact");
         for (int i = 0; i < factList.getLength(); i++) {
             Node nNode = factList.item(i);

@@ -32,7 +32,7 @@ public class ESProvider {
         Boolean validatedAnswer = null;
         while (!success) {
             try {
-                System.out.print("\n" + q.getQuestion());
+                System.out.printf("%n%s ", q.getQuestion());
                 String answer = in.nextLine();
                 validatedAnswer = q.getEvalutedAnswer(answer);
                 success = true;
