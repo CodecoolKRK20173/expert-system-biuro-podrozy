@@ -1,16 +1,14 @@
 package com.codecool.java.expertsystem.model;
 
-import com.codecool.java.expertsystem.model.Value;
-
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 
 public class Answer {
 
-    List<Value> values = new ArrayList<>();
+    private List<Value> values = new ArrayList<>();
 
-    public boolean evaluateAnswerByInput(String input) throws InputMismatchException {
+    boolean evaluateAnswerByInput(String input) throws InputMismatchException {
 
         for (Value value : values) {
             for (String pattern : value.getInputPattern()) {

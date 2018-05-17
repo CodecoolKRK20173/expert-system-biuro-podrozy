@@ -1,6 +1,7 @@
 package com.codecool.java.expertsystem.model;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Fact {
 
@@ -9,32 +10,19 @@ public class Fact {
     private Map<String, Boolean> fields = new HashMap<>();
 
     public Fact(String id, String description) {
-
         this.id = id;
         this.description = description;
     }
 
-    public Set<String> getIdSet() {
-
-        return this.fields.keySet();
-    }
-
-    public Map<String, Boolean> getFileds() {
+    public Map<String, Boolean> getFields() {
         return this.fields;
     }
 
     public void setFactValueById(String id, boolean value) {
-
         this.fields.put(id, value);
     }
 
-    public boolean getValueById(String id) {
-
-        return fields.get(id);
-    }
-
     public String getDescription() {
-
         return this.description;
     }
 }

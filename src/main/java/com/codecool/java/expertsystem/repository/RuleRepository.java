@@ -2,11 +2,7 @@ package com.codecool.java.expertsystem.repository;
 
 import com.codecool.java.expertsystem.model.Question;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class RuleRepository {
 
@@ -38,7 +34,7 @@ public class RuleRepository {
         @Override
         public Question next() {
             if (keyList == null) {
-                keyList = new ArrayList<String>(questions.keySet());
+                keyList = new ArrayList<>(questions.keySet());
             }
 
             String key = keyList.get(index++);

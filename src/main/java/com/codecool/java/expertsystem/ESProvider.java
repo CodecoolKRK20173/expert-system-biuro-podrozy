@@ -8,26 +8,22 @@ import com.codecool.java.expertsystem.parser.RuleParser;
 import com.codecool.java.expertsystem.repository.FactRepository;
 import com.codecool.java.expertsystem.repository.RuleRepository;
 
-import java.util.InputMismatchException;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.TreeMap;
-import java.util.Iterator;
+import java.util.*;
 
-public class ESProvider {
+class ESProvider {
 
     RuleRepository ruleRepository;
     FactRepository factRepository;
 
     private Map<String, Boolean> userAnswers;
 
-    public ESProvider(FactParser factParser, RuleParser ruleParser) {
+    ESProvider(FactParser factParser, RuleParser ruleParser) {
         ruleRepository = ruleParser.getRuleRepository();
         factRepository = factParser.getFactRepository();
         userAnswers = new TreeMap<>();
     }
 
-    public void collectAnswers() {
+    void collectAnswers() {
         while (ruleRepository.getIterator().hasNext()) {
             Question question = ruleRepository.getIterator().next();
             userAnswers.put(question.getId(), validateUserInput(question));
@@ -43,7 +39,7 @@ public class ESProvider {
             try {
                 System.out.printf("%n%s ", q.getQuestion());
                 String answer = in.nextLine();
-                validatedAnswer = q.getEvalutedAnswer(answer);
+                validatedAnswer = q.getEvaluatedAnswer(answer);
                 success = true;
             } catch (InputMismatchException e) {
                 System.out.println(e.getMessage());
@@ -52,17 +48,13 @@ public class ESProvider {
         return validatedAnswer;
     }
 
-    public boolean getAnswerByQuestion(String questionId) {
-        return this.userAnswers.get(questionId);
-    }
-
-    public String evaluate() {
+     String evaluate() {
         String metch = null;
         Iterator<Fact> factIterator = factRepository.getIterator();
 
         while(factIterator.hasNext() ) {
             Fact fact = factIterator.next();
-            if(fact.getFileds().equals(this.userAnswers)) {
+            if(fact.getFields().equals(this.userAnswers)) {
                 metch = fact.getDescription();
             }
         }

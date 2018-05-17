@@ -1,7 +1,6 @@
 package com.codecool.java.expertsystem.parser;
 
 import com.codecool.java.expertsystem.model.Fact;
-import com.codecool.java.expertsystem.parser.XMLParser;
 import com.codecool.java.expertsystem.repository.FactRepository;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -22,7 +21,7 @@ public class FactParser extends XMLParser {
         return this.factRepository;
     }
 
-    public void parse() {
+    private void parse() {
         NodeList factList = doc.getElementsByTagName("Fact");
         for (int i = 0; i < factList.getLength(); i++) {
             Node nNode = factList.item(i);
