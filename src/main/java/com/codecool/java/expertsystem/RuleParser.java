@@ -65,7 +65,6 @@ public class RuleParser extends XMLParser {
             if (list.item(i).getNodeName().equals("SingleValue")) {
                 valueNode = list.item(i).getAttributes().getNamedItem("value");
                 valueStr = valueNode.getNodeValue();
-                
                     //System.out.printf("%d %s value: %s %n%n", i, list.item(i).getNodeName(), valueStr); 
                 value = new SingleValue(valueStr, booleanValue); 
                 
@@ -73,7 +72,7 @@ public class RuleParser extends XMLParser {
             if (list.item(i).getNodeName().equals("MultipleValue")) {
                 valueNode = list.item(i).getAttributes().getNamedItem("value");
                 valueStr = valueNode.getNodeValue();
-                values = Arrays.asList(valueStr.split(", "));
+                values = Arrays.asList(valueStr.split(","));
                     //System.out.printf("%d %s value: %s %n%n", i, list.item(i).getNodeName(), valueStr);  
                 value = new MultipleValue(values, booleanValue);                 
             }         
