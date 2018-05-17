@@ -1,5 +1,6 @@
 package com.codecool.java.expertsystem;
 
+import java.lang.Exception;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,8 +10,14 @@ public class Answer {
 
     public boolean evaluateAswerByInput(String input) throws Exception {
 
-        //to implement
-        return false;
+        for (Value value : values) {
+            for (String pattern : value.getInputPattern()) {
+                if (pattern.equals(input)) {
+                    return value.getSelectionType();
+                }
+            } 
+        }
+        throw new Exception();
     }
 
     public void addValue(Value value) {
