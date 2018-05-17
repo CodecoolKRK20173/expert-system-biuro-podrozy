@@ -1,5 +1,7 @@
 package com.codecool.java.expertsystem;
 
+import java.util.InputMismatchException;
+
 public class Question {
 
     private String id;
@@ -28,8 +30,7 @@ public class Question {
         return this.answer;
     }
 
-    public boolean getEvalutedAnswer(String input) throws Exception {
-
-        return answer.evaluateAswerByInput(input);
+    public boolean getEvalutedAnswer(String input) throws InputMismatchException {
+        return answer.evaluateAnswerByInput(input);
     }
 }
