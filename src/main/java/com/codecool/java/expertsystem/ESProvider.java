@@ -27,7 +27,7 @@ class ESProvider {
         while (ruleRepository.getIterator().hasNext()) {
             Question question = ruleRepository.getIterator().next();
             userAnswers.put(question.getId(), validateUserInput(question));
-            System.out.println(userAnswers); // test use only TODO: delete for production
+            //System.out.println(userAnswers); // test use only TODO: delete for production
         }
     }
 
