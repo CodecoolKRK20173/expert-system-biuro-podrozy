@@ -17,14 +17,8 @@ public class MultipleValue extends Value {
     }
 
     public List<String> getInputPattern() {
-
         return params;
     }
-
-    // public boolean getSelectionType() {
-
-    //     return this.selectionType;
-    // }
 
     public String getParam (){
         String paramsToString = "";
