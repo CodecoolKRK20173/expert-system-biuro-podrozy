@@ -1,7 +1,10 @@
-package com.codecool.java.expertsystem;
+package com.codecool.java.expertsystem.parser;
 
 import java.util.Arrays;
 import java.util.List;
+
+import com.codecool.java.expertsystem.model.*;
+import com.codecool.java.expertsystem.repository.RuleRepository;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;

@@ -1,4 +1,6 @@
-package com.codecool.java.expertsystem;
+package com.codecool.java.expertsystem.repository;
+
+import com.codecool.java.expertsystem.model.Question;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,6 @@
-package com.codecool.java.expertsystem;
+package com.codecool.java.expertsystem.model;
+
+import com.codecool.java.expertsystem.model.Value;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;

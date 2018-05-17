@@ -1,5 +1,8 @@
-package com.codecool.java.expertsystem;
+package com.codecool.java.expertsystem.parser;
 
+import com.codecool.java.expertsystem.model.Fact;
+import com.codecool.java.expertsystem.parser.XMLParser;
+import com.codecool.java.expertsystem.repository.FactRepository;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;

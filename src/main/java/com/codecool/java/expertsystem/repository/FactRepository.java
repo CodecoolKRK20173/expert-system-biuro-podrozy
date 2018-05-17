@@ -1,4 +1,6 @@
-package com.codecool.java.expertsystem;
+package com.codecool.java.expertsystem.repository;
+
+import com.codecool.java.expertsystem.model.Fact;
 
 import java.util.Iterator;
 import java.util.ArrayList;

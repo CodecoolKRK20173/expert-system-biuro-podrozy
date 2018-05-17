@@ -1,6 +1,13 @@
 package com.codecool.java.expertsystem;
 
 
+import com.codecool.java.expertsystem.model.Fact;
+import com.codecool.java.expertsystem.model.Question;
+import com.codecool.java.expertsystem.parser.FactParser;
+import com.codecool.java.expertsystem.parser.RuleParser;
+import com.codecool.java.expertsystem.repository.FactRepository;
+import com.codecool.java.expertsystem.repository.RuleRepository;
+
 import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package com.codecool.java.expertsystem;
+package com.codecool.java.expertsystem.parser;
 
 import java.io.File;
 import java.io.FileNotFoundException;

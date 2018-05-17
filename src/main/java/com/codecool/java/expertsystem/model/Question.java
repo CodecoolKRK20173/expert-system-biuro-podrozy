@@ -1,4 +1,4 @@
-package com.codecool.java.expertsystem;
+package com.codecool.java.expertsystem.model;
 
 import java.util.InputMismatchException;
 
