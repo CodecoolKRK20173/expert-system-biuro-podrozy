@@ -21,16 +21,17 @@ public class Question {
     }
 
     public String getQuestion() {
-        
+
         return this.question;
     }
 
     public Answer getAnswer() {
-        
+
         return this.answer;
     }
 
     public boolean getEvalutedAnswer(String input) throws InputMismatchException {
+        
         return answer.evaluateAnswerByInput(input);
     }
 }

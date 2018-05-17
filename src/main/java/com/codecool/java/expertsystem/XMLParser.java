@@ -1,10 +1,9 @@
 package com.codecool.java.expertsystem;
 
 import java.io.File;
-import org.w3c.dom.Document;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import org.w3c.dom.Document;
 
 public abstract class XMLParser {
 

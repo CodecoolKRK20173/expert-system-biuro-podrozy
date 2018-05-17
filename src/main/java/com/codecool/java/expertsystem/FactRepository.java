@@ -6,17 +6,17 @@ import java.util.List;
 
 public class FactRepository {
 
-    private Iterator factIterator;    
+    private Iterator<Fact> factIterator;
     private List<Fact> facts = new ArrayList<>();
 
     public FactRepository() {
-        
+
         factIterator = new FactIterator();
     }
 
     public void addFact(Fact fact) {
 
-        facts.add(fact);        
+        facts.add(fact);
     }
 
     public Iterator<Fact> getIterator() {
@@ -24,8 +24,8 @@ public class FactRepository {
         return factIterator;
     }
 
-    private class FactIterator implements Iterator {
-        
+    private class FactIterator implements Iterator<Fact> {
+
         int index = 0;
 
         @Override
