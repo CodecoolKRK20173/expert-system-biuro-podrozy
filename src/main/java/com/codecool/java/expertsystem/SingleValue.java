@@ -1,6 +1,6 @@
 package com.codecool.java.expertsystem;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SingleValue extends Value {
@@ -15,6 +15,8 @@ public class SingleValue extends Value {
 
     public List<String> getInputPattern() {
 
-        return Collections.singletonList(this.param);
+        List<String> paramList = new ArrayList<>();
+        paramList.add(param);
+        return paramList;
     }
 }
