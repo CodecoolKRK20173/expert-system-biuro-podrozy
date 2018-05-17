@@ -19,4 +19,7 @@ public class SingleValue extends Value {
         return paramList;
     }
 
+    public String getParam (){
+        return param;
+    }
 }

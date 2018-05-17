@@ -9,7 +9,8 @@ public class FactParser extends XMLParser {
     private FactRepository factRepository;
 
     public FactParser() {
-        loadXmlDocument("Facts.xml");
+        loadXmlDocument("src/main/resources/Facts.xml");
+        parse();
     }
 
     FactRepository getFactRepository() {

@@ -8,7 +8,7 @@ public abstract class Value {
     //protected List<String> param;
 
     public abstract List<String> getInputPattern();
-
+  
     public boolean getSelectionType() {
         return this.selectionType;
     }
