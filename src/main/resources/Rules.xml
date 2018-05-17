@@ -57,11 +57,11 @@
 		<Question>What is more importat to you?</Question>
 		<Answer>
 			<Selection value = "true">
-				<MultipleValue value = "quiet, relax"/>
+				<MultipleValue value = "quiet,relax,nature"/>
 			</Selection>
 
 			<Selection value = "false">
-				<MultipleValue value = "party, fun"/>
+				<MultipleValue value = "party,fun,beer,sport"/>
 			</Selection>
 		</Answer>
 	</Rule>
