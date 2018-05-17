@@ -39,46 +39,46 @@ public class RuleParser extends XMLParser {
         Element answerElem = (Element) rule.getElementsByTagName("Answer").item(0);
         NodeList selections = answerElem.getElementsByTagName("Selection");
 
-        Answer answer = null;
+        Answer answer = new Answer();
 
         for(int i = 0; i < selections.getLength(); i++) {
             if (selections.item(i).getNodeName().equals("Selection")) {
-                answer = parseOneSelection((Element) selections.item(i));
+                answer.addValue(parseOneSelection((Element) selections.item(i)));
             }
         }
 
         return new Question(id, questionDesc, answer);
     }
 
-    private Answer parseOneSelection(Element selection) {
-
-        Answer answer = new Answer();
+    private Value parseOneSelection(Element selection) {
 
         Boolean booleanValue = Boolean.valueOf(selection.getAttribute("value"));
             //System.out.println("Selection value : " + booleanValue);
         
         NodeList list = selection.getChildNodes();
         Node valueNode;
-        String value;
+        String valueStr;
         List<String> values;
+        Value value = null;
+
         for(int i = 0; i < list.getLength(); i++) {
             if (list.item(i).getNodeName().equals("SingleValue")) {
                 valueNode = list.item(i).getAttributes().getNamedItem("value");
-                value = valueNode.getNodeValue();
+                valueStr = valueNode.getNodeValue();
                 
-                //System.out.printf("%s value: %s %n%n", list.item(i).getNodeName(), value); 
-                answer.addValue(new SingleValue(value, booleanValue)); 
+                    //System.out.printf("%d %s value: %s %n%n", i, list.item(i).getNodeName(), valueStr); 
+                value = new SingleValue(valueStr, booleanValue); 
                 
             }
             if (list.item(i).getNodeName().equals("MultipleValue")) {
                 valueNode = list.item(i).getAttributes().getNamedItem("value");
-                value = valueNode.getNodeValue();
-                values = Arrays.asList(value.split(", "));
-                //System.out.printf("%s value: %s %n%n", list.item(i).getNodeName(), value);  
-                answer.addValue(new MultipleValue(values, booleanValue));                 
+                valueStr = valueNode.getNodeValue();
+                values = Arrays.asList(valueStr.split(", "));
+                    //System.out.printf("%d %s value: %s %n%n", i, list.item(i).getNodeName(), valueStr);  
+                value = new MultipleValue(values, booleanValue);                 
             }         
         }
-        return answer;
+        return value;
     }
         
     public RuleRepository getRuleRepository() {
