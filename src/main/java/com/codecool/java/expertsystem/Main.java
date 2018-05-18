@@ -19,6 +19,7 @@ public class Main {
                 RuleParser ruleParser = new RuleParser();
                 ESProvider esProvider = new ESProvider(factParser, ruleParser);
                 esProvider.collectAnswers();
+                System.out.println("\nBased on your preferences we suggest you a trip to: ");
                 System.out.println(esProvider.evaluate());  
                 option = getString("\nDo you want to answer the question again? yes/no");
             } catch (InputMismatchException e) {

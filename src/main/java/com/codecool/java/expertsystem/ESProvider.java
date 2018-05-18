@@ -48,15 +48,29 @@ class ESProvider {
         return validatedAnswer;
     }
 
-     String evaluate() {
-        String metch = null;
+    String evaluate() {
+        // String metch = null;
+        // Iterator<Fact> factIterator = factRepository.getIterator();
+
+        // while(factIterator.hasNext() ) {
+        //     Fact fact = factIterator.next();
+        //     if(fact.getFields().equals(this.userAnswers)) {
+        //         metch = fact.getDescription();
+        //     }
+        // }
+        // return metch;
+
+        String metch = "";
         Iterator<Fact> factIterator = factRepository.getIterator();
 
         while(factIterator.hasNext() ) {
             Fact fact = factIterator.next();
             if(fact.getFields().equals(this.userAnswers)) {
-                metch = fact.getDescription();
+                metch += fact.getDescription()+ (", ");
             }
+        }
+        if (metch.isEmpty()) {
+            metch = "I am afraid we do not have right trip for you";
         }
         return metch;
     }
